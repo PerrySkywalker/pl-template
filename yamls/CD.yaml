@@ -1,4 +1,5 @@
-
-
+General:
+	comment:
+	seed: 42
 Data:
     data_dir = /home/perry/Desktop/Code/vgg_demo/train
