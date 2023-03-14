@@ -14,7 +14,6 @@ def make_parse():
     return args
 
 
-
 def main(cfg):
 
     #seed

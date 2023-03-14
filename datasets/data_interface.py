@@ -36,7 +36,7 @@ class DataInterface(pl.LightningDataModule):
 
 
     def load_data_module(self):
-        name = self.dataset
+        name = self.dataset_name
         camel_name = ''.join([i.capitalize() for i in name.split('_')])
         try:
             self.data_module = getattr(importlib.import_module(

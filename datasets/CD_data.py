@@ -7,7 +7,7 @@ from torch.utils.data import dataloader
 from torchvision import transforms
 from PIL import Image
 
-class CamelData(data.Dataset):
+class CdData(data.Dataset):
     def __init__(self, dataset_cfg=None, state=None):
         # Set all input args as attributes
         self.__dict__.update(locals())

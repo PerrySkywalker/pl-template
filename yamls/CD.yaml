@@ -1,5 +1,46 @@
 General:
-	comment:
-	seed: 42
+    comment: 
+    seed: 42
+    fp16: True
+    amp_level: O2
+    precision: 32
+    multi_gpu_mode: dp
+    gpus: [0]
+    epochs: &epoch 200
+    grad_acc: 2
+    frozen_bn: False
+    patience: 200
+    server: test #train #test
+    log_path: logs/
+
 Data:
-    data_dir = /home/perry/Desktop/Code/vgg_demo/train
+    dataset_name: CD_data
+    data_shuffle: True
+    data_dir: /home/perry/Desktop/Code/vgg_demo/train/
+    label_dir: dataset_csv/CD/
+    fold: 0
+    nfold: 4
+
+    train_dataloader:
+        batch_size: 1
+        num_workers: 16
+
+    test_dataloader:
+        batch_size: 1
+        num_workers: 16
+
+Model:
+    name: vgg16
+    n_classes: 2
+
+
+Optimizer:
+    opt: Adam
+    lr: 0.000025
+    opt_eps: null
+    opt_betas: null
+    momentum: null
+    weight_decay: 0.00001
+
+Loss:
+    base_loss: CrossEntropyLoss
